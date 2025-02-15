@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inspirational Quote</title>
+
+    />
+  </head>
+
+  <style>
+    body {
+      background-color: rgb(4, 37, 34);
+    }
+
+    .card {
+      display: grid;
+      grid-template-areas:
+        ". image ."
+        ". image ."
+        " . .              ."
+        ". title ."
+        " . .              ."
+        ". details ."
+        " . .              ."
+        ". action ."
+        ". action .";
+      text-align: center;
+      grid-template-columns: [container-start] 1lh minmax(0, 1fr) 1lh [container-end];
+      grid-template-rows: auto[container-start] auto 1lh auto 0.5lh auto 1lh auto [container-end] auto;
+    }
+
+    .card::before {
+      background-color: rgba(34, 137, 160, 0.39);
+      border-radius: 5px;
+      content: " ";
+      grid-area: container;
+    }
+
+    .card__title {
+      grid-area: title;
+      color: rgb(5, 25, 13);
+      font-size: 3rem;
+    }
+
+    .card__image {
+      grid-area: image;
+      place-self: center;
+      border-radius: 10px;
+    }
+
+    .card__details {
+      grid-area: details;
+      font-size: larger;
+      color: rgb(4, 34, 28);
+      text-align: right;
+    }
+
+    .card__action {
+      grid-area: action;
+      place-self: center;
+    }
+
+    button {
+      height: 40px;
+      width: auto;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      background-color: rgb(18, 70, 64);
+      color: rgb(3, 30, 21);
+      font-size: larger;
+      font-weight: 900;
+      border-radius: 10px;
+    }
+    ul {
+      margin: 50px auto;
+      display: flex;
+      text-align: right;
+      list-style: none;
+    }
+
+    li {
+      margin-right: 100px;
+    }
+
+    nav {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: medium;
+    }
+    a {
+      color: rgba(34, 137, 160, 0.39);
+      text-decoration: none;
+    }
+  </style>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Merchandise</a></li>
+        <li><a href="#">Tour Dates</a></li>
+      </ul>
+    </nav>
+    <div class="card">
+      <div class="card__title">
+        "Sometimes all choices are poor ones, Fool, and still a man must
+        choose."
+      </div>
+      <img
+        class="card__image"
+        src="green compass.jpg"
+        alt="compass"
+        width="400px"
+        height="auto"
+      />
+      <div class="card__details">Burrich in Assassin's Quest</div>
+      <button class="card__action" type="button">Follow me</button>
+    </div>
+  </body>
+</html>
